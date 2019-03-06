@@ -89,7 +89,6 @@ public class DataStructureDetective {
                 }
             }
         }
-
         return isSmallestFirstQueue;
     }
 }

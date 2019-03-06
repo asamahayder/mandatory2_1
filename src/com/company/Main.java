@@ -18,6 +18,14 @@ public class Main {
         String[] operations = detective.getOperations(input);
         int[] values = detective.getValues(input);
 
+        //de her to kommenterede for-loops har jeg brugt for at teste. De er ikke væsentlige for programmet.
+        /*for (int i = 0; i < values.length; i++) {
+            System.out.println(values[i]);
+        }
+
+        for (int i = 0; i < operations.length; i++) {
+            System.out.println(operations[i]);
+        }*/
 
         if (detective.isQueue(operations,values)){
             System.out.println("YES");
