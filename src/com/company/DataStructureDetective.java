@@ -1,9 +1,7 @@
 package com.company;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.Stack;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class DataStructureDetective {
 
@@ -67,9 +65,25 @@ public class DataStructureDetective {
         return isAQueue;
     }
 
-    public boolean isSmallestFirstQueue(){
+    public boolean isSmallestFirstQueue(String[] operations, int[] values){
         boolean isSmallestFirstQueue = true;
-        Queue<Integer>
+        ArrayList<Integer> queue = new ArrayList<>();
+        int currentIndex = 0;
+
+        for (int i = 0; i < operations.length; i++) {
+            if (operations[i].equals("I")){
+                queue.add(values[i]);
+                Collections.sort(queue);
+            }else if(operations[i].equals("E")){
+                int currentMin = queue.get(currentIndex);
+                int expectedValue = values[i];
+                if (expectedValue != currentMin){
+                    isSmallestFirstQueue = false;
+                }else{
+                    currentIndex++;
+                }
+            }
+        }
 
         return isSmallestFirstQueue;
     }

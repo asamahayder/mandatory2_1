@@ -17,7 +17,21 @@ public class Main {
         DataStructureDetective detective = new DataStructureDetective();
         String[] operations = detective.getOperations(input);
         int[] values = detective.getValues(input);
+
+
         if (detective.isQueue(operations,values)){
+            System.out.println("YES");
+        }else{
+            System.out.println("NO");
+        }
+
+        if (detective.isStack(operations,values)){
+            System.out.println("YES");
+        }else{
+            System.out.println("NO");
+        }
+
+        if (detective.isSmallestFirstQueue(operations,values)){
             System.out.println("YES");
         }else{
             System.out.println("NO");
