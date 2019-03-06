@@ -71,10 +71,15 @@ public class DataStructureDetective {
         int currentIndex = 0;
 
         for (int i = 0; i < operations.length; i++) {
-            if (operations[i].equals("I")){
+            if (operations[i].equals("I")) {
                 queue.add(values[i]);
-                Collections.sort(queue);
-            }else if(operations[i].equals("E")){
+            }
+        }
+
+        Collections.sort(queue);
+
+        for (int i = 0; i < operations.length; i++) {
+            if(operations[i].equals("E")){
                 int currentMin = queue.get(currentIndex);
                 int expectedValue = values[i];
                 if (expectedValue != currentMin){
